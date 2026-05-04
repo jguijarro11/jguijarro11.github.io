@@ -3,132 +3,328 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Jorge Guijarro — Portfolio</title>
+  <title>Jorge Guijarro — Backend Tech Lead</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <meta name="description" content="Portfolio profesional de Jorge Guijarro.">
+  <meta name="description" content="Portfolio profesional de Jorge Guijarro — Backend Tech Lead especializado en Python, GCP y System Design. Madrid, Spain.">
+  <meta property="og:title" content="Jorge Guijarro — Backend Tech Lead">
+  <meta property="og:description" content="Backend Tech Lead especializado en Python, GCP y System Design. Madrid, Spain.">
+  <meta property="og:type" content="website">
 </head>
 <body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">JG</a>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header class="hero">
-    <div class="container">
+    <div class="hero-inner">
+      <div class="avatar" aria-hidden="true">JG</div>
       <h1>Jorge Guijarro del Nuevo</h1>
-      <p class="role">Backend Tech Lead — Python, System Design, GCP</p>
-      <p><a class="btn" href="files/Jorge_Guijarro_resume.pdf" download>Descargar CV (PDF)</a></p>
-      <p style="margin-top:0.6rem;font-size:0.95rem;opacity:0.95">Madrid, Spain · (+34) 638907350 · <a href="mailto:jguijarro11@gmail.com" style="color:#fff;text-decoration:underline">jguijarro11@gmail.com</a></p>
+      <p class="hero-tagline">Construyo sistemas backend que escalan.</p>
+      <p class="hero-sub">Backend Tech Lead · Python · GCP · System Design · Madrid</p>
+      <div class="hero-cta">
+        <a class="btn btn-white" href="files/Jorge_Guijarro_resume.pdf" download>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+          Descargar CV
+        </a>
+        <a class="btn btn-outline-white" href="https://linkedin.com/in/jorge-guijarro-del-nuevo" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-outline-white" href="https://github.com/jguijarro11" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>Sobre mí</h2>
-      <p>Ingeniero Informático y Tech Lead en Selectra. Lidero el desarrollo backend de aplicaciones críticas orientadas a negocio, diseñadas para escalar y mantenerse en el tiempo. Especializado en Python (FastAPI, Django), arquitectura hexagonal, pipelines CI/CD y plataformas cloud (GCP).</p>
-    </section>
+  <main>
+    <div class="container">
 
-    <section id="experience">
-      <h2>Experiencia</h2>
-      <div class="projects">
-        <article class="project">
-          <h3>Selectra — Backend Tech Lead</h3>
-          <p><em>Dic 2025 – Presente</em></p>
-          <p><strong>Responsabilidades:</strong></p>
-          <ul>
-            <li>Liderazgo técnico del equipo backend y definición de arquitectura.</li>
-            <li>Coordinación con producto, frontend y stakeholders para alinear tecnología y negocio.</li>
-            <li>Gestión de equipo multidisciplinar en remoto.</li>
-          </ul>
-          <p><strong>Impacto:</strong></p>
-          <ul>
-            <li>Diseño e implementación de sistemas backend escalables en Python (FastAPI, Django).</li>
-            <li>Mejora de la calidad del código con SonarQube y automatización de despliegues en GCP.</li>
-          </ul>
-          <p><strong>Stack:</strong> Python, FastAPI, Django, PostgreSQL, Firestore, Docker, GCP, GitHub Actions, SonarQube</p>
-        </article>
+      <section id="about" class="section reveal">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="about-text">Ingeniero Informático y Tech Lead en Selectra. Lidero el desarrollo backend de aplicaciones críticas orientadas a negocio, diseñadas para escalar y mantenerse en el tiempo. Especializado en Python (FastAPI, Django), arquitectura hexagonal, pipelines CI/CD y plataformas cloud (GCP). Apasionado por el diseño de sistemas limpios, el trabajo en equipo y la mejora continua.</p>
+      </section>
 
-        <article class="project">
-          <h3>Selectra — Ingeniero de software</h3>
-          <p><em>Mar 2024 – Dic 2025</em></p>
-          <p>Desarrollo de la aplicación web principal en el sector energético para España y Portugal, con foco en integraciones y fiabilidad.</p>
-          <ul>
-            <li>Desarrollo backend con Ruby on Rails e integración con servicios externos (CRMs, sistemas de calidad).</li>
-            <li>Participación en metodologías Agile y despliegues automatizados en GCP.</li>
-          </ul>
-          <p><strong>Stack:</strong> Ruby on Rails, GCP, Git</p>
-        </article>
+      <section id="experience" class="section reveal">
+        <h2 class="section-title">Experiencia</h2>
+        <div class="timeline">
 
-        <article class="project">
-          <h3>Alisys — Desarrollador I+D</h3>
-          <p><em>Sep 2023 – Feb 2024</em></p>
-          <ul>
-            <li>Desarrollo de API OAuth2 dockerizada y proxy de integración con chatbots.</li>
-            <li>Investigación en modelos de lenguaje y despliegues en entornos privados (OKD).</li>
-          </ul>
-          <p><strong>Stack:</strong> Python, Docker, OAuth2, OKD</p>
-        </article>
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Backend Tech Lead</h3>
+                <span class="timeline-company">Selectra</span>
+                <time class="timeline-date">Dic 2025 – Presente</time>
+              </div>
+              <ul>
+                <li>Liderazgo técnico del equipo backend y definición de arquitectura.</li>
+                <li>Coordinación con producto, frontend y stakeholders para alinear tecnología y negocio.</li>
+                <li>Gestión de equipo multidisciplinar en remoto.</li>
+                <li>Diseño e implementación de sistemas backend escalables en Python (FastAPI, Django).</li>
+                <li>Mejora de la calidad del código con SonarQube y automatización de despliegues en GCP.</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Firestore</span><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">GitHub Actions</span><span class="tag">SonarQube</span>
+              </div>
+            </div>
+          </div>
 
-        <article class="project">
-          <h3>Sabio — Desarrollador</h3>
-          <p><em>Jul 2022 – Sep 2023</em></p>
-          <ul>
-            <li>Desarrollo de ChatBots y VoiceBots con Microsoft Bot Framework y Dialogflow CX.</li>
-            <li>Integración con APIs backend de clientes y despliegues automatizados (Docker, Kubernetes, ArgoCD).</li>
-          </ul>
-          <p><strong>Stack:</strong> Node.js, TypeScript, Dialogflow CX, Microsoft Bot Framework, MongoDB, Docker, Kubernetes, ArgoCD</p>
-        </article>
-        <article class="project">
-          <h3>Fonetic (Sabio Group) — Desarrollador de Software Junior</h3>
-          <p><em>May 2019 – Jun 2022</em></p>
-          <ul>
-            <li>Desarrollo de VoiceBots en VoiceXML y JavaScript; servicios backend en Java.</li>
-            <li>Participación en proyectos internacionales del sector asegurador y soporte en producción.</li>
-          </ul>
-          <p><strong>Stack:</strong> VoiceXML, JavaScript, Java, Node.js, TypeScript, MongoDB, Docker, Kubernetes</p>
-        </article>
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Ingeniero de Software</h3>
+                <span class="timeline-company">Selectra</span>
+                <time class="timeline-date">Mar 2024 – Dic 2025</time>
+              </div>
+              <p>Desarrollo de la aplicación web principal en el sector energético para España y Portugal, con foco en integraciones y fiabilidad.</p>
+              <ul>
+                <li>Desarrollo backend con Ruby on Rails e integración con servicios externos (CRMs, sistemas de calidad).</li>
+                <li>Participación en metodologías Agile y despliegues automatizados en GCP.</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">Ruby on Rails</span><span class="tag">GCP</span><span class="tag">Git</span>
+              </div>
+            </div>
+          </div>
 
-        <article class="project">
-          <h3>Optiva Media — Becario de desarrollo de software</h3>
-          <p><em>Jun 2018 – Dic 2018</em></p>
-          <ul>
-            <li>Desarrollo de funcionalidades backend/frontend y participación en pruebas de integración.</li>
-            <li>Colaboración en despliegues y en pipelines de integración continua (Jenkins).</li>
-          </ul>
-          <p><strong>Stack:</strong> JavaScript, Node.js, AngularJS, MySQL, Jenkins</p>
-        </article>
-      </div>
-    </section>
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Desarrollador I+D</h3>
+                <span class="timeline-company">Alisys</span>
+                <time class="timeline-date">Sep 2023 – Feb 2024</time>
+              </div>
+              <ul>
+                <li>Desarrollo de API OAuth2 dockerizada y proxy de integración con chatbots.</li>
+                <li>Investigación en modelos de lenguaje y despliegues en entornos privados (OKD).</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">OAuth2</span><span class="tag">OKD</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- <section id="projects">
-      <h2>Proyectos</h2>
-      <div class="projects">
-        <article class="project">
-          <h3>Proyecto 1</h3>
-          <p>Descripción corta. Añade una carpeta por proyecto y un README con detalles.</p>
-          <a href="#" class="btn">Ver repo</a>
-        </article>
-      </div>
-    </section> -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Desarrollador</h3>
+                <span class="timeline-company">Sabio</span>
+                <time class="timeline-date">Jul 2022 – Sep 2023</time>
+              </div>
+              <ul>
+                <li>Desarrollo de ChatBots y VoiceBots con Microsoft Bot Framework y Dialogflow CX.</li>
+                <li>Integración con APIs backend de clientes y despliegues automatizados.</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Dialogflow CX</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">ArgoCD</span>
+              </div>
+            </div>
+          </div>
 
-    <section id="skills">
-      <h2>Habilidades</h2>
-      <ul class="skills-list">
-        <li>Python (FastAPI, Django)</li>
-        <li>Ruby on Rails</li>
-        <li>Node.js, Java</li>
-        <li>GCP, Docker, Kubernetes</li>
-        <li>PostgreSQL, Firestore, MongoDB, MySQL</li>
-        <li>Idiomas: Español (Nativo), Inglés (Professional Working)</li>
-        <li>Certificaciones: Docker, Python Avanzado, Programación asistida por IA</li>
-      </ul>
-    </section>
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Desarrollador de Software Junior</h3>
+                <span class="timeline-company">Fonetic (Sabio Group)</span>
+                <time class="timeline-date">May 2019 – Jun 2022</time>
+              </div>
+              <ul>
+                <li>Desarrollo de VoiceBots en VoiceXML y JavaScript; servicios backend en Java.</li>
+                <li>Participación en proyectos internacionales del sector asegurador y soporte en producción.</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">VoiceXML</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+              </div>
+            </div>
+          </div>
 
-    <section id="contact">
-      <h2>Contacto</h2>
-      <p>Email: <a href="mailto:jguijarro11@gmail.com">jguijarro11@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/jorge-guijarro-del-nuevo">jorge-guijarro-del-nuevo</a></p>
-      <p>Teléfono: (+34) 638907350</p>
-    </section>
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Becario de Desarrollo de Software</h3>
+                <span class="timeline-company">Optiva Media</span>
+                <time class="timeline-date">Jun 2018 – Dic 2018</time>
+              </div>
+              <ul>
+                <li>Desarrollo de funcionalidades backend/frontend y pruebas de integración.</li>
+                <li>Colaboración en despliegues y pipelines de integración continua (Jenkins).</li>
+              </ul>
+              <div class="stack-tags">
+                <span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">AngularJS</span><span class="tag">MySQL</span><span class="tag">Jenkins</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python" width="32" height="32">
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="FastAPI" width="32" height="32">
+                <span>FastAPI</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/django/django-plain.svg" alt="Django" width="32" height="32" class="icon-dark">
+                <span>Django</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/ruby/ruby-original.svg" alt="Ruby on Rails" width="32" height="32">
+                <span>Ruby on Rails</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="32" height="32">
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java" width="32" height="32">
+                <span>Java</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="32" height="32">
+                <span>TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Cloud &amp; DevOps</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/googlecloud/googlecloud-original.svg" alt="GCP" width="32" height="32">
+                <span>GCP</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="Docker" width="32" height="32">
+                <span>Docker</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="32" height="32">
+                <span>Kubernetes</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="GitHub Actions" width="32" height="32" class="icon-dark">
+                <span>GitHub Actions</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="Git" width="32" height="32">
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Bases de datos</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="32" height="32">
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="32" height="32">
+                <span>MongoDB</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="MySQL" width="32" height="32">
+                <span>MySQL</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/firebase/firebase-plain.svg" alt="Firestore" width="32" height="32">
+                <span>Firestore</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Idiomas &amp; Certificaciones</h3>
+            <div class="cert-list">
+              <span class="cert-badge">🇪🇸 Español — Nativo</span>
+              <span class="cert-badge">🇬🇧 Inglés — Professional Working</span>
+              <span class="cert-badge">🐳 Docker Certified</span>
+              <span class="cert-badge">🐍 Python Avanzado</span>
+              <span class="cert-badge">🤖 Programación asistida por IA</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <p>Portfolio personal — Jorge Guijarro del Nuevo</p>
+  <footer id="contact" class="footer">
+    <div class="footer-inner">
+      <p class="footer-name">Jorge Guijarro del Nuevo</p>
+      <p class="footer-role">Backend Tech Lead · Madrid, Spain</p>
+      <div class="footer-links">
+        <a href="mailto:jguijarro11@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+          jguijarro11@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/jorge-guijarro-del-nuevo" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/jguijarro11" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="tel:+34638907350">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+          (+34) 638 907 350
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Jorge Guijarro del Nuevo</p>
+    </div>
   </footer>
+
+  <script>
+    // Navbar shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
