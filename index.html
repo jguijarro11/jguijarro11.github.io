@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,19 +17,36 @@
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">JG</a>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo claro/oscuro">
+          <span class="theme-icon theme-icon--light" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+          </span>
+          <span class="theme-icon theme-icon--dark" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+          </span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
-      <div class="avatar" aria-hidden="true">JG</div>
+      <div class="avatar">
+        <img
+          src="images/profile.jpg"
+          alt="Jorge Guijarro del Nuevo"
+          class="avatar-photo"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        >
+        <span class="avatar-initials" aria-hidden="true">JG</span>
+      </div>
       <h1>Jorge Guijarro del Nuevo</h1>
       <p class="hero-tagline">Construyo sistemas backend que escalan.</p>
       <p class="hero-sub">Backend Tech Lead · Python · GCP · System Design · Madrid</p>
@@ -66,8 +83,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Backend Tech Lead</h3>
-                <span class="timeline-company">Selectra</span>
+                <img src="images/logos/selectra.jpeg" alt="Selectra" class="company-logo">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Backend Tech Lead</h3>
+                  <span class="timeline-company">Selectra</span>
+                </div>
                 <time class="timeline-date">Dic 2025 – Presente</time>
               </div>
               <ul>
@@ -87,8 +107,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Ingeniero de Software</h3>
-                <span class="timeline-company">Selectra</span>
+                <img src="images/logos/selectra.jpeg" alt="Selectra" class="company-logo">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Ingeniero de Software</h3>
+                  <span class="timeline-company">Selectra</span>
+                </div>
                 <time class="timeline-date">Mar 2024 – Dic 2025</time>
               </div>
               <p>Desarrollo de la aplicación web principal en el sector energético para España y Portugal, con foco en integraciones y fiabilidad.</p>
@@ -106,8 +129,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Desarrollador I+D</h3>
-                <span class="timeline-company">Alisys</span>
+                <img src="images/logos/alisys.png" alt="Alisys" class="company-logo logo-light-bg">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Desarrollador I+D</h3>
+                  <span class="timeline-company">Alisys</span>
+                </div>
                 <time class="timeline-date">Sep 2023 – Feb 2024</time>
               </div>
               <ul>
@@ -124,8 +150,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Desarrollador</h3>
-                <span class="timeline-company">Sabio</span>
+                <img src="images/logos/sabio.jpeg" alt="Sabio" class="company-logo">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Desarrollador</h3>
+                  <span class="timeline-company">Sabio</span>
+                </div>
                 <time class="timeline-date">Jul 2022 – Sep 2023</time>
               </div>
               <ul>
@@ -142,8 +171,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Desarrollador de Software Junior</h3>
-                <span class="timeline-company">Fonetic (Sabio Group)</span>
+                <img src="images/logos/fonetic.jpg" alt="Fonetic" class="company-logo">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Desarrollador de Software Junior</h3>
+                  <span class="timeline-company">Fonetic (Sabio Group)</span>
+                </div>
                 <time class="timeline-date">May 2019 – Jun 2022</time>
               </div>
               <ul>
@@ -160,8 +192,11 @@
             <div class="timeline-marker"></div>
             <div class="timeline-body">
               <div class="timeline-meta">
-                <h3 class="timeline-role">Becario de Desarrollo de Software</h3>
-                <span class="timeline-company">Optiva Media</span>
+                <img src="images/logos/optiva-media.png" alt="Optiva Media" class="company-logo logo-light-bg">
+                <div class="timeline-meta-text">
+                  <h3 class="timeline-role">Becario de Desarrollo de Software</h3>
+                  <span class="timeline-company">Optiva Media</span>
+                </div>
                 <time class="timeline-date">Jun 2018 – Dic 2018</time>
               </div>
               <ul>
@@ -307,13 +342,44 @@
   </footer>
 
   <script>
-    // Navbar shadow on scroll
+    // ── Theme toggle ──────────────────────────────────────────
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+
+    function getSystemTheme() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      const resolved = theme === 'auto' ? getSystemTheme() : theme;
+      html.setAttribute('data-theme', resolved);
+      localStorage.setItem('theme', theme);
+      themeBtn.setAttribute('aria-label',
+        resolved === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    }
+
+    // Init: respect stored preference or system default
+    applyTheme(localStorage.getItem('theme') || 'auto');
+
+    themeBtn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Keep in sync if user changes OS theme and no manual override
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'auto') {
+        applyTheme('auto');
+      }
+    });
+
+    // ── Navbar shadow on scroll ───────────────────────────────
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    // Intersection Observer for reveal animations
+    // ── Reveal animations ─────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
