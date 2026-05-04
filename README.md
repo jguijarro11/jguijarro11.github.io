@@ -58,7 +58,3 @@ Soy Ingeniero Informático y actualmente Tech Lead en Selectra, donde lidero el 
 - Universidad Politécnica de Madrid — Grado en Ingeniería Informática (2015–2020)
 
 **CV (descargar)**: [Descargar CV (PDF)](files/Jorge_Guijarro_resume.pdf)
-
-Cómo publicar: habilita GitHub Pages para la rama `main` y selecciona la raíz del repositorio para servir `index.html`.
-
-Si quieres que ajuste el tono (más conciso o más técnico), que traduzca al inglés o que añada secciones por proyecto con enlaces a repositorios, dímelo y lo implemento.
