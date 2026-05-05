@@ -623,14 +623,58 @@ li { margin-bottom: 0.35rem; }
    RESPONSIVE
    ============================================= */
 @media (max-width: 640px) {
-  .nav-links { gap: 1.25rem; }
-  .nav-links a { font-size: 0.82rem; }
+  /* Navbar */
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.78rem; }
 
-  .timeline { padding-left: 1.5rem; }
-  .timeline-marker { left: calc(-1.5rem + 1px); }
-  .timeline-date { margin-left: 0; width: 100%; }
+  /* Hero */
+  .hero {
+    padding-top: calc(var(--navbar-h) + 2.5rem);
+    padding-bottom: 3rem;
+  }
+  .avatar { width: 80px; height: 80px; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 260px; justify-content: center; }
 
+  /* Timeline */
+  .timeline { padding-left: 1.25rem; }
+  .timeline::before { left: 5px; }
+  .timeline-marker { left: calc(-1.25rem + 1px); width: 12px; height: 12px; }
+
+  .timeline-body { padding: 1rem; }
+
+  /* Meta: logo + texto encima, fecha abajo */
+  .timeline-meta {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+  .timeline-meta-text { min-width: 0; }
+  .timeline-date {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
+
+  /* Rol más pequeño */
+  .timeline-role { font-size: 0.92rem; }
+
+  /* Tags más compactos */
+  .tag { font-size: 0.7rem; padding: 0.15rem 0.5rem; }
+
+  /* Skills */
   .skills-grid { grid-template-columns: 1fr; }
 
-  .footer-links { gap: 0.65rem 1.5rem; }
+  /* Footer */
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+  }
+}
+
+/* Pantallas muy pequeñas (< 380px) */
+@media (max-width: 380px) {
+  .nav-links { gap: 0.65rem; }
+  .nav-links a { font-size: 0.72rem; }
+  .timeline-body { padding: 0.85rem 0.75rem; }
 }
