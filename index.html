@@ -22,6 +22,7 @@
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#experience">Experiencia</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Proyectos</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
         <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo claro/oscuro">
@@ -311,6 +312,35 @@
 
         </div>
       </section>
+
+      <section id="projects" class="section reveal">
+        <h2 class="section-title">Proyectos</h2>
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-head">
+              <h3 class="project-name">Koi</h3>
+              <a class="project-link" href="https://github.com/jguijarro11/my-own-koi" target="_blank" rel="noopener">Ver en GitHub</a>
+            </div>
+            <p class="project-lead">
+              Aplicación Android para entrenar en casa, totalmente offline: sin backend, sin cuenta y sin
+              red. Sustituye una hoja de cálculo que sabía planificar pero no guiar la sesión.
+            </p>
+            <ul>
+              <li>Temporizador guiado basado en <strong>instantes absolutos</strong> en lugar de un contador: sobrevive a la pantalla apagada, a <em>doze</em> y a la muerte del proceso por construcción, no por código defensivo.</li>
+              <li>Arquitectura por capas con dependencias invertidas y dominio puro, verificado con 269 tests en JVM sin emulador.</li>
+              <li>Una única puerta de calidad (<code>./gradlew qualityCheck</code>) que CI ejecuta sin variantes, así que un verde local y un verde en CI significan lo mismo.</li>
+              <li>Esquema de base de datos versionado en el repositorio: un cambio sin migración rompe la build en vez de un dispositivo.</li>
+              <li>Documentación como entregable: ADD, ocho ADR y especificación del formato de intercambio.</li>
+            </ul>
+            <div class="stack-tags">
+              <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">Room</span><span class="tag">Hilt</span><span class="tag">Coroutines</span><span class="tag">Gradle</span><span class="tag">GitHub Actions</span><span class="tag">detekt</span><span class="tag">Kover</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
 
     </div>
   </main>
