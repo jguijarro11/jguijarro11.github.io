@@ -9,14 +9,15 @@ Este repositorio contiene el portfolio público de Jorge Guijarro. La informaci�
 - LinkedIn: https://linkedin.com/in/jorge-guijarro-del-nuevo/
 
 **Extracto**:
-Soy Ingeniero Informático y actualmente Tech Lead en Selectra, donde lidero el desarrollo backend de aplicaciones críticas enfocadas al negocio, diseñadas para escalar y mantenerse en el tiempo. Mi especialidad es construir sistemas robustos utilizando Python (FastAPI y Django), aplicando principios de arquitectura hexagonal y buenas prácticas de ingeniería que permiten evolucionar productos sin comprometer su calidad. He evolucionado desde roles de desarrollo hasta responsabilidades de liderazgo técnico, gestionando equipos multidisciplinares en remoto y coordinando con stakeholders para alinear tecnología y negocio. Trabajo habitualmente con entornos cloud (GCP), pipelines de CI/CD, contenedores Docker y herramientas de calidad de código, con foco en escalabilidad, mantenibilidad y time-to-market.
+Soy Ingeniero Informático y actualmente Desarrollador Full Stack Senior en Cuimo, donde desarrollo la web de venta, el ERP interno y las integraciones con servicios externos, en contacto constante con los distintos departamentos para entender sus necesidades de negocio. Trabajo con Node.js y TypeScript en backend, React en frontend, AWS y MongoDB, y uso Claude para el desarrollo guiado por IA. Anteriormente fui Backend Tech Lead en Selectra, donde lideré el desarrollo backend de aplicaciones críticas enfocadas al negocio utilizando Python (FastAPI y Django), aplicando principios de arquitectura hexagonal y buenas prácticas de ingeniería que permiten evolucionar productos sin comprometer su calidad. He evolucionado desde roles de desarrollo hasta responsabilidades de liderazgo técnico, gestionando equipos multidisciplinares en remoto y coordinando con stakeholders para alinear tecnología y negocio. Trabajo habitualmente con entornos cloud (AWS, GCP), pipelines de CI/CD, contenedores Docker y herramientas de calidad de código, con foco en escalabilidad, mantenibilidad y time-to-market.
 
 **Habilidades principales**:
-- Backend: Python (FastAPI, Django), Ruby on Rails, Node.js, Java
+- Backend: Node.js, TypeScript, Python (FastAPI, Django), Ruby on Rails, Java
+- Frontend: React
 - Arquitectura: System Design, Microservicios, Arquitectura hexagonal
-- Cloud / DevOps: Google Cloud Platform (GCP), Docker, Kubernetes, CI/CD, GitHub Actions
-- Bases de datos: PostgreSQL, Firestore, MongoDB, MySQL
-- Herramientas y prácticas: Git, SonarQube, Agile, Code Reviews, Testing
+- Cloud / DevOps: AWS, Google Cloud Platform (GCP), Docker, Kubernetes, CI/CD, GitHub Actions
+- Bases de datos: MongoDB, PostgreSQL, Firestore, MySQL
+- Herramientas y prácticas: Git, SonarQube, Agile, Code Reviews, Testing, desarrollo guiado por IA (Claude)
 - Idiomas: Inglés (Professional Working), Español (Nativo)
 
 **Certificaciones y formación**:
@@ -28,7 +29,11 @@ Soy Ingeniero Informático y actualmente Tech Lead en Selectra, donde lidero el 
 
 **Experiencia**:
 
-- Selectra — Jefe Técnico / Backend Tech Lead — Dic 2025 – Presente
+- Cuimo — Desarrollador Full Stack Senior — Jun 2026 – Presente
+	- Responsabilidades: desarrollo de la web de venta de Cuimo, del ERP interno de la empresa y de integraciones con servicios externos; contacto constante con los distintos departamentos para entender las necesidades de negocio.
+	- Stack: Node.js, TypeScript, React, MongoDB, AWS, Claude
+
+- Selectra — Jefe Técnico / Backend Tech Lead — Dic 2025 – Jun 2026
 	- Responsabilidades: liderazgo técnico del equipo backend, definición de arquitectura y decisiones técnicas, coordinación con frontend/producto y stakeholders, gestión de equipo multidisciplinar en remoto.
 	- Impacto: diseño e implementación de sistemas backend escalables en Python (FastAPI, Django); mejora de la calidad del código con SonarQube; automatización de despliegues en GCP mediante pipelines CI/CD.
 	- Stack: Python, FastAPI, Django, PostgreSQL, Firestore, Docker, GCP, GitHub Actions, SonarQube
