@@ -408,6 +408,52 @@
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
+    // ── Active section in navbar ──────────────────────────────
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const navSections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    let lockedId = null;
+    let lockTimer;
+
+    function setActive(id) {
+      navLinks.forEach(a => {
+        const isActive = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('active', isActive);
+        if (isActive) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    }
+
+    function currentSectionId() {
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) return navSections[navSections.length - 1].id;
+      const line = navbar.offsetHeight + window.innerHeight * 0.3;
+      let current = null;
+      navSections.forEach(s => {
+        if (s.getBoundingClientRect().top <= line) current = s.id;
+      });
+      return current;
+    }
+
+    function releaseLockSoon() {
+      clearTimeout(lockTimer);
+      lockTimer = setTimeout(() => { lockedId = null; }, 150);
+    }
+
+    navLinks.forEach(a => {
+      a.addEventListener('click', () => {
+        lockedId = a.getAttribute('href').slice(1);
+        setActive(lockedId);
+        releaseLockSoon();
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (lockedId) releaseLockSoon();
+      else setActive(currentSectionId());
+    }, { passive: true });
+
+    setActive(currentSectionId());
+
     // ── Reveal animations ─────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
