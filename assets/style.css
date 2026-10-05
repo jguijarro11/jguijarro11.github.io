@@ -562,6 +562,18 @@ li { margin-bottom: 0.35rem; }
   border-radius: var(--radius-sm);
 }
 
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: border-color var(--ease), color var(--ease);
+}
+.cert-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.cert-ext { flex-shrink: 0; opacity: 0.6; }
+
 /* =============================================
    FOOTER / CONTACT
    ============================================= */
