@@ -724,8 +724,11 @@ li { margin-bottom: 0.35rem; }
 
 /* Pantallas muy pequeñas (< 380px) */
 @media (max-width: 380px) {
-  .nav-links { gap: 0.65rem; }
-  .nav-links a { font-size: 0.72rem; }
+  .nav-container { padding: 0 0.5rem; }
+  .nav-right { gap: 0.4rem; }
+  .nav-links { gap: 0.45rem; }
+  .nav-links a { font-size: 0.66rem; }
+  .theme-btn { width: 30px; height: 30px; }
   .timeline-body { padding: 0.85rem 0.75rem; }
 }
 
