@@ -1,0 +1,386 @@
+/* Hallmark · shape: Long Document · genre: editorial · theme: Atelier (by request, seed portfolio-senior-full-stack-544c·69388785·2026-10-28·r0) · redesign: full · copy: verbatim
+ * hero: Corridor · nav: masthead · footer: colophon block · imagery: one photograph, the user's own, warm · signature: the portrait hung as a matted print on cotton stock, its wall label pencilled beneath
+ * axes: light/roman-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V5 · weakest: S and P, a catalogue of a career could be any CV; the one object on the page is his own face hung as a print, and the career is set as the theme's own ruled timetable rather than as cards */
+/* Hallmark · dropped the theme's drifting WebGL air · a luminous field behind type is what gate 29 calls a wash, and this page is a document: the limewash paper and its grain carry the register alone */
+/* Hallmark · dropped the company logos from the timetable · the marks are 200px rasters and at the size this register allows they read as grey smudges; a wall label names the house in type, which is what Atelier does */
+/* Hallmark · dropped the reveal observer and the .reveal classes · nothing on this page moves on scroll, and the old reveals shipped the page blank when the script failed (62) */
+/* Hallmark · dropped the devicon icon grid served from a CDN and the emoji on the language and certificate rows · 30a refuses an emoji standing in for an icon, and the skills are set as a ruled list, which is the theme's own material */
+/* Hallmark · dropped the light/dark toggle and its button · Atelier declares one paper, limewash under warm daylight, and no second ground; a control with nothing to switch to is worse than no control */
+/* Hallmark · deviates from Long Document's single 65ch column · each section pairs its measure with the print, a ruled timetable or a ficha so the body fills the width (77); the register, the inline heads and the typographic actions are the shape's */
+@import url("./tokens.css");
+@import url("./base.css");
+
+/* ── What this page adds ───────────────────────────────────────── */
+:root {
+  --masthead-h: 136px;
+  --nav-h: 56px;
+  --measure: 62ch;
+  --texture-opacity: 0.045;
+  --texture-card: 0.09;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 -4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+
+body {
+  color: var(--color-ink-2);
+  line-height: 1.6;
+  padding-bottom: 88px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 180px 180px;
+  opacity: var(--texture-opacity);
+  mix-blend-mode: multiply;
+}
+body > * { position: relative; z-index: var(--z-base); }
+
+html { scroll-padding-top: calc(var(--nav-h) + var(--space-xl)); }
+
+h1, h2 { font-weight: var(--display-weight); color: var(--color-ink); }
+h3 { font-weight: var(--serif-small); color: var(--color-ink); letter-spacing: var(--tracking-display); }
+
+a { color: inherit; text-decoration-color: var(--color-accent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+.pencil { color: var(--color-pencil); }
+
+/* ── Masthead ──────────────────────────────────────────────────── */
+.masthead {
+  min-height: var(--masthead-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-xl) var(--space-lg);
+}
+.masthead-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  letter-spacing: var(--tracking-statement);
+  line-height: 1;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+/* ── Nav · the rule the masthead leaves behind ─────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-nav);
+  background: var(--color-paper);
+  border-block: var(--rule-hair) solid var(--color-rule);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--nav-h);
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links a {
+  display: inline-block;
+  padding-block: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--dur-short) var(--ease-out);
+}
+.nav-links a:hover { color: var(--color-ink); }
+.nav-links a.active {
+  color: var(--color-ink);
+  box-shadow: inset 0 -1px 0 var(--color-accent);
+}
+
+/* ── Controls · the theme's pair ───────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding-inline: var(--space-lg);
+  border: var(--rule-hair) solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+}
+.btn:hover { background: var(--color-ink); color: var(--color-paper); }
+.btn:active { background: var(--color-ink-2); color: var(--color-paper); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.link-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.2em;
+  white-space: nowrap;
+}
+.link-action:hover { text-decoration-thickness: 2px; }
+
+/* ── Hero · Corridor ───────────────────────────────────────────── */
+.hero {
+  min-height: calc(100svh - 222px);
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-2xl);
+}
+.hero-inner {
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.hero h1 {
+  max-width: none;
+  font-size: clamp(2.6rem, 5.6vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: var(--tracking-statement);
+}
+.hero .lead {
+  margin: var(--space-lg) auto 0;
+  max-width: 44ch;
+  color: var(--color-ink-2);
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm) var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.section { padding-block: var(--section-gap-s) 0; }
+.section--wide { padding-block: var(--section-gap) 0; }
+.section--last { padding-bottom: var(--section-gap-l); }
+.section > .container > h2 {
+  max-width: 24ch;
+  font-size: clamp(2rem, 2.1vw + 1.2rem, 2.9rem);
+  line-height: 1.04;
+  letter-spacing: var(--tracking-statement);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Sobre mí · the measure beside the print ───────────────────── */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-xl) var(--space-3xl);
+  align-items: start;
+}
+.about-text p { max-width: var(--measure); }
+.about-text p + p { margin-top: var(--space-lg); }
+
+/* The signature: his face hung as a matted print on cotton stock. */
+.print { margin: 0; }
+.print-mat {
+  position: relative;
+  isolation: isolate;
+  padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+  border-radius: 2px;
+  background: linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade));
+  box-shadow: var(--shadow-card), inset 1px 1px 0 var(--lit);
+}
+.print-mat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: var(--fibre);
+  background-size: 220px 220px;
+  opacity: var(--texture-card);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.print-window {
+  aspect-ratio: 4 / 5;
+  outline: var(--rule-hair) solid var(--color-card-edge);
+  outline-offset: -1px;
+}
+.print-label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  padding-top: var(--space-xs);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* ── Experiencia · the ruled timetable ─────────────────────────── */
+.ruled { border-top: var(--rule-head) solid var(--color-ink); }
+.ruled > * + * { border-top: var(--rule-hair) solid var(--color-rule); }
+
+.post {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(0, 6.6fr) minmax(0, 3fr);
+  gap: var(--space-xs) var(--space-xl);
+  padding-block: var(--space-xl);
+}
+.post-when {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-pencil);
+  font-variant-numeric: tabular-nums;
+}
+.post h3 { font-size: var(--text-title); max-width: 28ch; }
+.post-house {
+  margin-top: var(--space-3xs);
+  font-family: var(--font-display);
+  font-weight: var(--serif-small);
+  font-size: var(--text-lg);
+  color: var(--color-muted);
+}
+.post ul {
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure);
+}
+.post li { position: relative; padding-left: var(--space-lg); }
+.post li + li { margin-top: var(--space-xs); }
+.post li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: var(--space-sm);
+  height: var(--rule-hair);
+  background: var(--color-rule);
+}
+.post-stack { text-align: right; }
+
+/* ── Proyectos · the measure beside the ficha ──────────────────── */
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-xl) var(--space-3xl);
+  align-items: start;
+}
+.case-text p { max-width: var(--measure); }
+.case-text ul {
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure);
+}
+.case-text li { position: relative; padding-left: var(--space-lg); }
+.case-text li + li { margin-top: var(--space-sm); }
+.case-text li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: var(--space-sm);
+  height: var(--rule-hair);
+  background: var(--color-rule);
+}
+.case-text code {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95em;
+}
+.case-link { margin-top: var(--space-xl); }
+
+.ficha { width: 100%; border-collapse: collapse; text-align: left; }
+.ficha caption {
+  text-align: left;
+  padding-bottom: var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: var(--serif-small);
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+}
+.ficha th,
+.ficha td {
+  padding-block: var(--space-sm);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  vertical-align: top;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+.ficha tr:first-child th,
+.ficha tr:first-child td { border-top: var(--rule-head) solid var(--color-ink); }
+.ficha th { color: var(--color-muted); white-space: nowrap; padding-right: var(--space-md); width: 9rem; }
+
+/* ── Habilidades · the ruled list ──────────────────────────────── */
+.crafts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--space-3xl);
+  align-items: start;
+}
+.craft { padding-block: var(--space-lg); }
+.craft h3 { font-size: var(--text-lg); max-width: none; }
+.craft p { max-width: none; margin-top: var(--space-2xs); }
+.craft-list {
+  margin: var(--space-2xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.craft-list li { break-inside: avoid; }
+.craft-list li + li { margin-top: var(--space-3xs); }
+
+/* ── Contacto · the colophon ───────────────────────────────────── */
+.footer {
+  border-top: var(--rule-hair) solid var(--color-rule);
+  padding-block: var(--space-2xl);
+}
+.footer-colophon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-colophon a { color: var(--color-ink); }
+.footer-note { margin-top: var(--space-lg); }
+
+@media (max-width: 60rem) {
+  .about,
+  .case { grid-template-columns: minmax(0, 1fr); }
+  .print { max-width: 24rem; }
+  .post { grid-template-columns: minmax(0, 1fr); }
+  .post-stack { text-align: left; margin-top: var(--space-md); }
+  .crafts { grid-template-columns: minmax(0, 1fr); }
+  .hero { min-height: 0; padding-block: var(--space-2xl) var(--space-3xl); }
+  .masthead { min-height: 0; padding-block: var(--space-lg) var(--space-md); }
+  .nav-links { gap: var(--space-2xs) var(--space-lg); }
+  .nav-links a { font-size: var(--text-md); }
+}
