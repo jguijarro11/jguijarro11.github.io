@@ -1,0 +1,319 @@
+/* Hallmark · shape: Index-First · genre: editorial · theme: Ink (by request, seed portfolio-senior-full-stack-544c·69388785·2026-10-28·r0) · redesign: full · copy: verbatim
+ * hero: Index, the career index is the first screen's content · nav: slab · footer: mast · imagery: one photograph, the user's own, muted · signature: one teal pill reading "Presente" on the only row still open, and nothing else on the page is coloured
+ * axes: light/grotesk-sans/chromatic-teal · posture: restrained · contrast: pass · fold: pass · ink: paper · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · weakest: S, a ruled index of jobs could belong to any CV; the teal earns its place by marking the one row that is still true today, which is the only thing on this page that can change */
+/* Hallmark · waive 22 · ink and greys at zero chroma · a notice board is printed in plain black, and the theme's do-not says so outright */
+/* Hallmark · dropped the reveal observer · Ink's motion section is "nothing moves but state", and the old reveals shipped the page blank when the script failed (62) */
+/* Hallmark · dropped the light/dark toggle and its button · Ink declares two colourways and both are light paper; a control with nothing to switch to is worse than no control */
+/* Hallmark · dropped the devicon icon grid served from a CDN · the skills are set as ruled rows in Epilogue, which is the theme's own material, and the page stops depending on jsdelivr */
+/* Hallmark · dropped the emoji flags and badges · 30a refuses an emoji standing in for an icon; the owner's words carry the row */
+/* Hallmark · waive 49b · "Docker DevOps Profesional" and "Programación asistida por IA" wrap to two lines at 320 · they are the certificates' real names, the owner's own words, and shortening a certificate is lying about what it is called */
+/* Hallmark · dropped the company logos from the entries · they are small colour rasters on white grounds, and at the size this register allows they read as blank light squares; Ink is printed in one black, so the company name carries it at 700 */
+/* Hallmark · dropped the tag chips under every post · the stack is one plain line in the label style, so the page has exactly one kind of pill and it means state */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root {
+  --nav-h: 72px;
+  --row-h: 76px;
+  --switcher-room: 88px;
+}
+
+html { scroll-padding-top: calc(var(--nav-h) + var(--space-lg)); }
+body { font-size: 1.0625rem; color: var(--color-ink-2); }
+
+h1, h2, h3 { color: var(--color-ink); line-height: 1.02; }
+h3 { line-height: 1.15; }
+a { color: inherit; font-weight: 600; text-decoration-color: var(--color-muted); }
+a:hover { text-decoration-color: var(--color-accent); }
+a:active { color: var(--color-accent); }
+
+.label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+.mono { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; font-weight: 400; }
+
+/* ── Nav · slab ────────────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-nav);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  min-height: var(--nav-h);
+}
+.nav-mark {
+  font-weight: 700;
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-display);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-right { display: flex; align-items: center; gap: var(--space-lg); min-width: 0; }
+.nav-links { display: flex; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; min-width: 0; }
+.nav-links a {
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--color-paper-3);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-block: var(--space-xs);
+  transition: color var(--dur-micro) var(--ease-out);
+}
+.nav-links a:hover { color: var(--color-paper); }
+.nav-links a.active { color: var(--color-paper); box-shadow: inset 0 -2px 0 var(--color-accent-soft); }
+.nav-write {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  text-decoration-color: var(--color-paper-3);
+}
+.nav-write:hover { text-decoration-color: var(--color-accent-soft); }
+
+/* ── Controls ──────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: var(--space-lg);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: 10px;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-weight: 600;
+  font-size: var(--text-md);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+}
+.btn:hover { background: var(--color-paper-3); }
+.btn:active { background: var(--color-rule); }
+.btn--primary { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.btn--primary:hover { background: var(--color-ink-2); border-color: var(--color-ink-2); }
+.btn--primary:active { background: var(--color-ink); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── The state pill · the one teal on the page ─────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-soft-ink);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ── Hero · Index ──────────────────────────────────────────────── */
+.hero {
+  min-height: calc(100svh - var(--nav-h));
+  display: grid;
+  align-content: center;
+  padding-block: var(--space-2xl);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.hero h1 {
+  max-width: 16ch;
+  font-size: var(--text-display-s);
+}
+.hero .lead {
+  margin-top: var(--space-lg);
+  max-width: 40ch;
+  color: var(--color-ink-2);
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+/* ── The career index · the signature ──────────────────────────── */
+.index {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--rule-hair) solid var(--color-ink);
+}
+.index li { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.index a {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: var(--row-h);
+  padding-block: var(--space-sm);
+  font-weight: 400;
+  text-decoration: none;
+  transition: background-color var(--dur-micro) var(--ease-out);
+}
+.index a:hover { background: var(--color-paper-2); }
+.index a:active { background: var(--color-paper-3); }
+.index-when {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.index-role { font-weight: 700; color: var(--color-ink); letter-spacing: var(--tracking-display); }
+.index-at { display: block; font-weight: 400; font-size: var(--text-sm); color: var(--color-muted); letter-spacing: normal; }
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.section { padding-block: var(--section-gap-s) 0; }
+.section--wide { padding-block: var(--section-gap) 0; }
+.band {
+  margin-top: var(--section-gap);
+  padding-block: var(--section-gap-s);
+  background: var(--color-paper-2);
+}
+.section-head { margin-bottom: var(--space-2xl); }
+.section-head h2 { max-width: 18ch; font-size: var(--text-section); }
+
+/* ── Experiencia · the entries ─────────────────────────────────── */
+.entries { border-top: var(--rule-hair) solid var(--color-ink); }
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: var(--space-md) var(--space-2xl);
+  padding-block: var(--space-xl);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  scroll-margin-top: calc(var(--nav-h) + var(--space-lg));
+}
+.entry-meta { display: flex; flex-direction: column; gap: var(--space-xs); align-items: start; }
+.entry-at { font-weight: 700; color: var(--color-ink); }
+.entry-when {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.entry-body h3 { margin-bottom: var(--space-md); }
+.entry-body ul { margin: 0; padding-left: var(--space-lg); max-width: 68ch; }
+.entry-body li { margin-bottom: var(--space-2xs); }
+.entry-stack { margin-top: var(--space-md); max-width: 68ch; }
+
+/* ── Sobre mí ──────────────────────────────────────────────────── */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: var(--space-xl) var(--space-2xl);
+  align-items: center;
+}
+.about p + p { margin-top: var(--space-md); }
+.about p { max-width: 58ch; }
+.about-figure { margin: 0; }
+.about-plate {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  outline: var(--rule-hair) solid var(--color-rule);
+  outline-offset: -1px;
+}
+.about-figure figcaption { margin-top: var(--space-sm); }
+
+/* ── Proyectos ─────────────────────────────────────────────────── */
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+.case ul { margin: var(--space-lg) 0 0; padding-left: var(--space-lg); max-width: 64ch; }
+.case li + li { margin-top: var(--space-sm); }
+.case code { font-family: var(--font-outlier); font-size: 0.92em; }
+.case-link { margin-top: var(--space-xl); }
+.specs { width: 100%; border-collapse: collapse; text-align: left; }
+.specs caption {
+  text-align: left;
+  padding-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  border-bottom: var(--rule-hair) solid var(--color-ink);
+}
+.specs th,
+.specs td {
+  padding-block: var(--space-sm);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  vertical-align: top;
+  font-size: var(--text-sm);
+}
+.specs th { font-weight: 600; color: var(--color-ink); white-space: nowrap; padding-right: var(--space-md); width: 9.5rem; }
+.specs td { font-weight: 400; color: var(--color-ink-2); }
+
+/* ── Habilidades ───────────────────────────────────────────────── */
+.skills { border-top: var(--rule-hair) solid var(--color-ink); }
+.skill {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: var(--space-xs) var(--space-2xl);
+  padding-block: var(--space-lg);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  align-items: baseline;
+}
+.skill h3 { font-size: var(--text-title); max-width: none; }
+.skill p { max-width: 68ch; }
+.certs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xs) var(--space-2xl); margin: 0; padding: 0; list-style: none; }
+.certs li { color: var(--color-ink-2); }
+
+/* ── Footer · mast ─────────────────────────────────────────────── */
+.footer {
+  margin-top: var(--section-gap-l);
+  border-top: var(--rule-hair) solid var(--color-ink);
+  padding-block: var(--space-2xl);
+  padding-bottom: calc(var(--space-2xl) + var(--switcher-room));
+}
+.footer-mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 0.98;
+  font-size: clamp(2.25rem, 7vw, 6rem);
+  color: var(--color-ink);
+  margin: 0;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-2xl);
+  margin: var(--space-xl) 0 0;
+  padding: var(--space-md) 0 0;
+  list-style: none;
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+.footer-note { margin-top: var(--space-lg); }
+
+@media (max-width: 48rem) {
+  .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 60rem) {
+  .hero { min-height: 0; padding-block: var(--space-2xl) var(--space-3xl); }
+  .hero-grid,
+  .about,
+  .case { grid-template-columns: minmax(0, 1fr); }
+  .about-figure { max-width: 420px; }
+  .entry,
+  .skill { grid-template-columns: minmax(0, 1fr); }
+  .entry-meta { flex-direction: row; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .nav-container { flex-wrap: wrap; padding-block: var(--space-sm); gap: var(--space-xs) var(--space-md); }
+  .nav-right { order: -1; flex: 1 1 auto; justify-content: flex-end; gap: var(--space-md); }
+  .nav-links { order: 2; flex-basis: 100%; gap: var(--space-md); overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links li { flex: 0 0 auto; }
+  .index a { grid-template-columns: minmax(0, 1fr) auto; }
+  .index-when { grid-column: 1 / -1; }
+}
