@@ -1,0 +1,421 @@
+/* Hallmark · shape: Split Studio · genre: modern-minimal · theme: Coral (by request, seed portfolio-senior-full-stack-544c·69388785·2026-10-28·r0) · redesign: full · copy: verbatim
+ * hero: Settled · nav: edge-aligned · footer: mast · imagery: one photograph, the user's own, muted, mounted as a print · signature: the career as cotton sheets on the felt desk, the post he holds today carrying its own word, Presente, pressed into the stock in coral
+ * axes: light/grotesk-sans/warm · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V5 · weakest: S, stationery on a desk could dress any CV; the one pressed word is the owner's own date, so the ink lands on the one fact that is true today and goes stale on its own */
+/* Hallmark · one modality · Coral declares a single paper, light 97 55, and no second ground; there is no dark mode and no toggle that would switch to nothing */
+/* Hallmark · dropped the reveal · Coral moves once to play a job on the desk and this page has no job to play, and modern-minimal composes rather than reveals; the page is simply there, with or without script */
+/* Hallmark · dropped the devicon grid, the emoji and the tag chips · 30a refuses an emoji for an icon, the stack is a plain line per the content spec, and the skills are rows of type */
+/* Hallmark · the three vías in Sobre mí are set as an index of cotton cards · the words are lifted from the owner's own sentence, not added to it */
+/* Hallmark · answered F4 · the pair is a cotton card beside an ink board card, both pressed, because Coral's controls are letterpress stock and it refuses outlined and flat-square buttons; the hierarchy is board against stock, not fill against outline */
+/* Hallmark · the pressed word keeps Geist Mono · it sits inside the mono date string Jun 2026 – Presente, where Coral's General Sans 600 would break the tabular line and read as a mistake rather than as a stamp */
+/* Hallmark · copy: verbatim · every line comes from assets/v/CONTENT.md, decided with the owner sentence by sentence; the dashes in Jun 2026 – Presente and Español — Nativo are his, so 19, 58 and 69 report as notes */
+@import url("./tokens.css");
+@import url("./base.css");
+
+/* ── Tokens this page adds ─────────────────────────────────────── */
+:root {
+  --nav-h: 72px;
+  --switcher-room: 88px;
+  --tex-cotton: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.011' numOctaves='3' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' seed='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='360' height='360' filter='url(%23a)' opacity='0.05'/%3E%3Crect width='360' height='360' filter='url(%23b)' opacity='0.028'/%3E%3C/svg%3E");
+  --tex-desk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.018' numOctaves='3' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='360' height='360' filter='url(%23a)' opacity='0.07'/%3E%3Crect width='360' height='360' filter='url(%23b)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+html { scroll-padding-top: calc(var(--nav-h) + var(--space-lg)); }
+body { font-size: 1.0625rem; }
+h2 { font-size: var(--text-section); }
+
+a { text-decoration-color: var(--color-rule-2); }
+a:hover { text-decoration-color: var(--color-accent-2); }
+
+.label { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
+.fig { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; }
+
+/* ── The two materials ─────────────────────────────────────────── */
+.desk {
+  background-color: var(--color-desk);
+  background-image:
+    radial-gradient(90% 120% at 0% 30%, var(--color-cotton), transparent 62%),
+    var(--tex-desk);
+}
+.stock {
+  background-color: var(--color-cotton);
+  background-image: linear-gradient(100deg, var(--color-cotton), transparent 45%), var(--tex-cotton);
+  color: var(--color-print);
+  border-radius: var(--radius-stock);
+  box-shadow: var(--edge-stock), var(--cast-stock);
+}
+
+/* ── Nav · edge-aligned ────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-nav);
+  background-color: var(--color-desk);
+  background-image: var(--tex-desk);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  min-height: var(--nav-h);
+}
+.nav-mark {
+  font-weight: var(--display-weight);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-display);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links a {
+  display: inline-block;
+  padding-block: var(--space-xs);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--dur-micro) var(--ease-out);
+}
+.nav-links a:hover { color: var(--color-ink); }
+.nav-links a.active { color: var(--color-ink); box-shadow: inset 0 -2px 0 var(--color-accent-2); }
+
+/* ── Controls · letterpress cards ──────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-stock);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-md);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+.btn--card {
+  background-color: var(--color-cotton);
+  background-image: var(--tex-cotton);
+  color: var(--color-print);
+  text-shadow: 0.5px 0.75px 0 var(--color-cotton);
+  box-shadow: var(--edge-stock), var(--cast-stock);
+}
+.btn--ink {
+  background: var(--color-board);
+  color: var(--color-board-type);
+  text-shadow: 0 -0.75px 0 var(--color-ink);
+  box-shadow: var(--cast-stock);
+}
+.btn--card:hover { transform: translateY(-1px); box-shadow: var(--edge-stock), var(--cast-stock-lift); }
+.btn--ink:hover { transform: translateY(-1px); box-shadow: var(--cast-stock-lift); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── The pressed word, Coral's one settled state ───────────────── */
+.pressed {
+  display: inline-block;
+  color: var(--color-paid);
+  font-weight: var(--display-weight);
+  letter-spacing: -0.01em;
+  filter: url("#coral-press");
+  text-shadow: 0.5px 0.9px 0 color-mix(in oklab, var(--color-cotton) 72%, transparent);
+  rotate: -3.5deg;
+}
+#coral-press feFlood { flood-color: var(--color-paid); }
+
+/* ── Hero · Settled ────────────────────────────────────────────── */
+.hero {
+  min-height: calc(100svh - var(--nav-h) - var(--space-xl));
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-2xl);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: var(--space-3xl);
+  align-items: center;
+  width: 100%;
+}
+.hero h1 {
+  max-width: 14ch;
+  font-size: var(--text-display-s);
+  line-height: 1.03;
+}
+.hero .lead {
+  margin-top: var(--space-lg);
+  max-width: 44ch;
+  color: var(--color-ink-2);
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+/* the print, mounted on the desk */
+.print {
+  margin: 0;
+  max-width: 472px;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  rotate: -1.4deg;
+}
+.print-plate {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-input);
+  outline: var(--rule-hair) solid color-mix(in oklab, var(--color-ink) 9%, transparent);
+  outline-offset: -1px;
+}
+.print figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.section { padding-block: var(--section-gap-s) 0; }
+.section--wide { padding-block: var(--section-gap) 0; }
+.section--last { padding-bottom: var(--section-gap-l); }
+
+.split {
+  display: grid;
+  gap: var(--space-3xl) var(--gap-columns);
+  align-items: start;
+}
+.split--about { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; }
+.split--roles { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+.split--koi { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); }
+.split--skills { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); }
+
+.split h2 { max-width: 14ch; }
+.split--roles h2,
+.split--skills h2 { position: sticky; top: calc(var(--nav-h) + var(--space-xl)); }
+
+.prose p + p { margin-top: var(--space-md); }
+.prose p { max-width: 58ch; }
+
+/* ── The three vías, as an index of cards ──────────────────────── */
+.vias {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 380px;
+}
+.vias li {
+  padding: var(--space-lg);
+  font-size: var(--text-title);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  rotate: var(--tilt, 0deg);
+}
+.vias li:nth-child(1) { --tilt: -1.1deg; margin-inline-end: var(--space-xl); }
+.vias li:nth-child(2) { --tilt: 0.8deg; margin-inline-start: var(--space-sm); }
+.vias li:nth-child(3) { --tilt: -0.5deg; margin-inline-end: var(--space-md); }
+
+/* ── Experience · sheets on the desk ───────────────────────────── */
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.role { padding: var(--space-xl); }
+.role--lead { padding: var(--space-2xl); box-shadow: var(--edge-stock), var(--cast-stock-lift); }
+.role-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-lg);
+}
+.role h3 { max-width: 26ch; }
+.role--lead h3 { font-size: var(--text-2xl); }
+.role-when {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.role-at {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  font-weight: 500;
+  color: var(--color-ink-2);
+}
+.role-mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: var(--radius-input);
+  filter: saturate(0.55) contrast(1.02);
+}
+.role ul {
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 68ch;
+}
+.role li { position: relative; padding-left: var(--space-lg); }
+.role li + li { margin-top: var(--space-xs); }
+.role li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: var(--space-sm);
+  height: var(--rule-hair);
+  background: var(--color-rule-2);
+}
+.role-stack {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  max-width: 68ch;
+}
+
+/* ── Koi ───────────────────────────────────────────────────────── */
+.koi ul {
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 68ch;
+}
+.koi li { position: relative; padding-left: var(--space-lg); }
+.koi li + li { margin-top: var(--space-sm); }
+.koi li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: var(--space-sm);
+  height: var(--rule-hair);
+  background: var(--color-rule-2);
+}
+.koi code {
+  font-family: var(--font-outlier);
+  font-size: 0.92em;
+  padding-inline: var(--space-2xs);
+  background: var(--color-paper-2);
+  border-radius: var(--space-3xs);
+}
+.koi-link { margin-top: var(--space-xl); }
+.koi-link a { font-weight: 500; }
+
+.specs {
+  padding: var(--space-lg);
+  rotate: 0.6deg;
+}
+.specs table { width: 100%; border-collapse: collapse; text-align: left; }
+.specs caption {
+  text-align: left;
+  padding-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+}
+.specs th,
+.specs td {
+  padding-block: var(--space-sm);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  vertical-align: top;
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+.specs th { color: var(--color-muted); white-space: nowrap; padding-right: var(--space-md); }
+
+/* ── Skills ────────────────────────────────────────────────────── */
+.skills { margin: 0; padding: 0; }
+.skills > div {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: var(--space-xs) var(--space-xl);
+  padding-block: var(--space-lg);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  align-items: baseline;
+}
+.skills > div:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.skills dt { font-weight: 500; }
+.skills dd { margin: 0; color: var(--color-ink-2); max-width: 62ch; }
+
+/* ── Footer · mast ─────────────────────────────────────────────── */
+.footer {
+  border-top: var(--rule-hair) solid var(--color-rule);
+  padding-block: var(--space-3xl);
+  padding-bottom: calc(var(--space-3xl) + var(--switcher-room));
+}
+.footer-mark {
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+  font-size: clamp(2rem, 6.6vw, 6rem);
+  margin: 0;
+  max-width: 14ch;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+  margin: var(--space-2xl) 0 0;
+  padding: var(--space-lg) 0 0;
+  border-top: var(--rule-hair) solid var(--color-rule);
+  list-style: none;
+}
+.footer-links a { font-weight: 500; }
+.footer-note { margin-top: var(--space-xl); }
+
+@media (max-width: 60rem) {
+  .hero { min-height: 0; padding-block: var(--space-2xl) var(--space-3xl); }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .print { margin-inline: 0; max-width: 380px; }
+  .split--about,
+  .split--roles,
+  .split--koi,
+  .split--skills { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .split--roles h2,
+  .split--skills h2 { position: static; }
+  .vias { margin-inline-start: 0; }
+  .skills > div { grid-template-columns: minmax(0, 1fr); }
+  .specs { rotate: 0deg; }
+  .nav-container { flex-wrap: wrap; gap: var(--space-sm); padding-block: var(--space-sm); }
+  .nav-right { width: 100%; }
+  .nav-links {
+    width: 100%;
+    gap: var(--space-md);
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2xs);
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { font-size: var(--text-md); }
+  .role, .role--lead { padding: var(--space-lg); }
+  .role-head { display: block; }
+  .role-when { margin-top: var(--space-2xs); }
+  .role--lead h3 { font-size: var(--text-xl); }
+}
