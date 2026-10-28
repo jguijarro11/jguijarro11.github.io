@@ -1,0 +1,66 @@
+/* The variant switcher. Not part of any theme: it is scaffolding for choosing one,
+   and it goes with the losing variants. Every value it paints is a --vs- token, so
+   it declares its own block and never reaches into a page's system. */
+:root {
+  --vs-ground: oklch(18% 0.004 250);
+  --vs-ink: oklch(95% 0.003 250);
+  --vs-muted: oklch(70% 0.004 250);
+  --vs-line: oklch(32% 0.005 250);
+  --vs-current: oklch(97% 0.003 250);
+  --vs-shade: oklch(10% 0.01 250 / 0.35);
+  --vs-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --vs-pad-y: var(--space-sm, 12px);
+  --vs-pad-x: var(--space-md, 16px);
+  --vs-offset: var(--space-md, 16px);
+}
+
+#variant-switcher {
+  position: fixed;
+  z-index: 2147483000;
+  inset-block-end: var(--vs-offset);
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  font-family: var(--vs-font);
+}
+
+#variant-switcher > div {
+  pointer-events: auto;
+  display: flex;
+  align-items: stretch;
+  max-width: calc(100% - var(--space-xl, 40px));
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--vs-ground);
+  border: 1px solid var(--vs-line);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px var(--vs-shade);
+}
+#variant-switcher > div::-webkit-scrollbar { display: none; }
+
+#variant-switcher a {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: var(--vs-pad-y) var(--vs-pad-x);
+  color: var(--vs-muted);
+  font-size: 0.8125rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#variant-switcher a:hover { color: var(--vs-ink); }
+#variant-switcher a:focus-visible { outline: 2px solid var(--vs-current); outline-offset: -3px; }
+#variant-switcher a[aria-current="page"] { color: var(--vs-current); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  #variant-switcher a { transition: none; }
+}
+@media print {
+  #variant-switcher { display: none; }
+}
