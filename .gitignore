@@ -1,2 +1,4 @@
 .venv/
 files/Profile*
+.hallmark/
+node_modules/
