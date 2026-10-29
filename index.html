@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="es" data-theme="auto">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Jorge Guijarro — Desarrollador Full Stack Senior</title>
+  <title>Jorge Guijarro del Nuevo</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/page.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -24,8 +26,16 @@
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="coral-press" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <nav class="navbar" id="navbar" aria-label="Secciones">
+    <div class="container nav-container">
+      <a class="nav-mark" href="#" aria-label="Jorge Guijarro, inicio">Jorge Guijarro del Nuevo</a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#about">Sobre mí</a></li>
@@ -34,462 +44,240 @@
           <li><a href="#skills">Habilidades</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
-        <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo claro/oscuro">
-          <span class="theme-icon theme-icon--light" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
-          </span>
-          <span class="theme-icon theme-icon--dark" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
-          </span>
-        </button>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <svg class="hero-hex" viewBox="0 0 330 330" fill="none" aria-hidden="true">
-        <g stroke="#ffffff" stroke-linejoin="round">
-          <polygon points="165,12 297,88 297,242 165,318 33,242 33,88" stroke-opacity="0.22" stroke-width="1.6"/>
-          <polygon points="165,52 262,108 262,222 165,278 68,222 68,108" stroke-opacity="0.32" stroke-width="1.6" stroke-dasharray="6 7"/>
-        </g>
-        <g fill="#9fd0ff">
-          <circle cx="165" cy="12" r="6" fill-opacity="0.9"/>
-          <circle cx="297" cy="242" r="6" fill-opacity="0.9"/>
-          <circle cx="33" cy="88" r="6" fill-opacity="0.9"/>
-          <circle cx="262" cy="108" r="5" fill-opacity="0.65"/>
-          <circle cx="68" cy="222" r="5" fill-opacity="0.65"/>
-        </g>
-      </svg>
-      <div class="avatar">
-        <img
-          src="images/profile.jpg"
-          alt="Jorge Guijarro del Nuevo"
-          class="avatar-photo"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        >
-        <span class="avatar-initials" aria-hidden="true">JG</span>
-      </div>
-      <h1>Jorge Guijarro del Nuevo</h1>
-      <p class="hero-tagline">Construyo software que resuelve problemas de negocio.</p>
-      <p class="hero-sub">Full Stack Senior · Node.js · TypeScript · React · AWS · Madrid</p>
-      <div class="hero-cta">
-        <a class="btn btn-white" href="files/Jorge_Guijarro_resume.pdf" download>
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-          Descargar CV
-        </a>
-        <a class="btn btn-outline-white" href="https://linkedin.com/in/jorge-guijarro-del-nuevo" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn btn-outline-white" href="https://github.com/jguijarro11" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </header>
-
   <main>
-    <div class="container">
 
-      <section id="about" class="section reveal">
-        <h2 class="section-title">Sobre mí</h2>
-        <p class="about-text">Ingeniero Informático y Desarrollador Full Stack Senior en Cuimo. Desarrollo la web de venta, el ERP interno y las integraciones con servicios externos, en contacto constante con los distintos departamentos para entender sus necesidades y traducirlas en producto. Trabajo con Node.js y TypeScript en backend, React en frontend, AWS y MongoDB. Antes fui Backend Tech Lead en Selectra, liderando sistemas en Python (FastAPI, Django) sobre GCP. Apasionado por el diseño de sistemas limpios, el trabajo en equipo y la mejora continua.</p>
-      </section>
-
-      <section id="experience" class="section reveal">
-        <h2 class="section-title">Experiencia</h2>
-        <div class="timeline">
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/cuimo.jpeg" alt="Cuimo" class="company-logo">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Desarrollador Full Stack Senior</h3>
-                  <span class="timeline-company">Cuimo</span>
-                </div>
-                <time class="timeline-date">Jun 2026 – Presente</time>
-              </div>
-              <ul>
-                <li>Desarrollo de funcionalidades para la web de venta de Cuimo.</li>
-                <li>Evolución del ERP interno de la empresa.</li>
-                <li>Integraciones con servicios externos.</li>
-                <li>Contacto constante con los distintos departamentos para entender las necesidades de negocio y trasladarlas a producto.</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">MongoDB</span><span class="tag">AWS</span><span class="tag">Claude</span>
-              </div>
-            </div>
+    <section class="hero desk">
+      <div class="container hero-grid">
+        <div>
+          <h1>Construyo software que resuelve problemas de negocio.</h1>
+          <p class="lead">Ingeniero informático y desarrollador full stack senior en Cuimo. Abierto a proyectos como autónomo.</p>
+          <div class="hero-cta">
+            <a class="btn btn--ink" href="mailto:jguijarro11@gmail.com">Escríbeme</a>
+            <a class="btn btn--card" href="files/Jorge_Guijarro_resume.pdf" download>Descargar CV</a>
           </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/selectra.jpeg" alt="Selectra" class="company-logo">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Backend Tech Lead</h3>
-                  <span class="timeline-company">Selectra</span>
-                </div>
-                <time class="timeline-date">Dic 2025 – Jun 2026</time>
-              </div>
-              <ul>
-                <li>Liderazgo técnico del equipo backend y definición de arquitectura.</li>
-                <li>Coordinación con producto, frontend y stakeholders para alinear tecnología y negocio.</li>
-                <li>Gestión de equipo multidisciplinar en remoto.</li>
-                <li>Diseño e implementación de sistemas backend escalables en Python (FastAPI, Django).</li>
-                <li>Mejora de la calidad del código con SonarQube y automatización de despliegues en GCP.</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Firestore</span><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">GitHub Actions</span><span class="tag">SonarQube</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/selectra.jpeg" alt="Selectra" class="company-logo">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Ingeniero de Software</h3>
-                  <span class="timeline-company">Selectra</span>
-                </div>
-                <time class="timeline-date">Mar 2024 – Dic 2025</time>
-              </div>
-              <ul>
-                <li>Desarrollo de la aplicación web principal en el sector energético para España y Portugal, con foco en integraciones y fiabilidad.</li>
-                <li>Desarrollo backend con Ruby on Rails e integración con servicios externos (CRMs, sistemas de calidad).</li>
-                <li>Participación en metodologías Agile y despliegues automatizados en GCP.</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">Ruby on Rails</span><span class="tag">GCP</span><span class="tag">Git</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/alisys.png" alt="Alisys" class="company-logo logo-light-bg">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Desarrollador I+D</h3>
-                  <span class="timeline-company">Alisys</span>
-                </div>
-                <time class="timeline-date">Sep 2023 – Feb 2024</time>
-              </div>
-              <ul>
-                <li>Desarrollo de API OAuth2 dockerizada y proxy de integración con chatbots.</li>
-                <li>Investigación en modelos de lenguaje y despliegues en entornos privados (OKD).</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">OAuth2</span><span class="tag">OKD</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/sabio.jpeg" alt="Sabio" class="company-logo">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Desarrollador</h3>
-                  <span class="timeline-company">Sabio</span>
-                </div>
-                <time class="timeline-date">Jul 2022 – Sep 2023</time>
-              </div>
-              <ul>
-                <li>Desarrollo de ChatBots y VoiceBots con Microsoft Bot Framework y Dialogflow CX.</li>
-                <li>Integración con APIs backend de clientes y despliegues automatizados.</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Dialogflow CX</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">ArgoCD</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/fonetic.jpg" alt="Fonetic" class="company-logo">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Desarrollador de Software Junior</h3>
-                  <span class="timeline-company">Fonetic (Sabio Group)</span>
-                </div>
-                <time class="timeline-date">May 2019 – Jun 2022</time>
-              </div>
-              <ul>
-                <li>Desarrollo de VoiceBots en VoiceXML y JavaScript; servicios backend en Java.</li>
-                <li>Participación en proyectos internacionales del sector asegurador y soporte en producción.</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">VoiceXML</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-body">
-              <div class="timeline-meta">
-                <img src="images/logos/optiva-media.png" alt="Optiva Media" class="company-logo logo-light-bg">
-                <div class="timeline-meta-text">
-                  <h3 class="timeline-role">Becario de Desarrollo de Software</h3>
-                  <span class="timeline-company">Optiva Media</span>
-                </div>
-                <time class="timeline-date">Jun 2018 – Dic 2018</time>
-              </div>
-              <ul>
-                <li>Desarrollo de funcionalidades backend/frontend y pruebas de integración.</li>
-                <li>Colaboración en despliegues y pipelines de integración continua (Jenkins).</li>
-              </ul>
-              <div class="stack-tags">
-                <span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">AngularJS</span><span class="tag">MySQL</span><span class="tag">Jenkins</span>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </section>
+        <figure class="print stock">
+          <div class="print-plate" data-slot="portrait">
+            <img src="images/profile.jpg" alt="Jorge Guijarro del Nuevo" width="960" height="1200" fetchpriority="high">
+          </div>
+          <figcaption>Jorge Guijarro del Nuevo, Madrid.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <section id="projects" class="section reveal">
-        <h2 class="section-title">Proyectos</h2>
-        <div class="projects-grid">
+    <section id="about" class="section">
+      <div class="container split split--about">
+        <div class="prose">
+          <h2>Sobre mí</h2>
+          <p>Ingeniero Informático y Desarrollador Full Stack Senior en Cuimo. Desarrollo la web de venta, el ERP interno y las integraciones con servicios externos, en contacto constante con los distintos departamentos para entender sus necesidades y traducirlas en producto.</p>
+          <p>Trabajo con Node.js y TypeScript en backend, React en frontend, AWS y MongoDB. Antes fui Backend Tech Lead en Selectra, liderando sistemas en Python (FastAPI, Django) sobre GCP.</p>
+          <p>Compagino Cuimo con proyectos propios como autónomo: liderazgo técnico, advisory y desarrollo.</p>
+        </div>
+        <ul class="vias">
+          <li class="stock">Liderazgo técnico</li>
+          <li class="stock">Advisory</li>
+          <li class="stock">Desarrollo</li>
+        </ul>
+      </div>
+    </section>
 
-          <article class="project-card reveal">
-            <div class="project-head">
-              <h3 class="project-name">Koi</h3>
-              <a class="project-link" href="https://github.com/jguijarro11/my-own-koi" target="_blank" rel="noopener">Ver en GitHub</a>
+    <section id="experience" class="section section--wide">
+      <div class="container split split--roles">
+        <h2>Experiencia</h2>
+        <ul class="roles">
+
+          <li class="role role--lead stock">
+            <div class="role-head">
+              <h3>Desarrollador Full Stack Senior</h3>
+              <p class="role-when"><time datetime="2026-06">Jun 2026</time> – <span class="pressed">Presente</span></p>
             </div>
-            <p class="project-lead">
-              Aplicación Android para entrenar en casa, totalmente offline: sin backend, sin cuenta y sin
-              red. Sustituye una hoja de cálculo que sabía planificar pero no guiar la sesión.
-            </p>
+            <p class="role-at"><img src="images/logos/cuimo.jpeg" alt="" class="role-mark" width="36" height="36">Cuimo</p>
             <ul>
-              <li>Temporizador guiado basado en <strong>instantes absolutos</strong> en lugar de un contador: sobrevive a la pantalla apagada, a <em>doze</em> y a la muerte del proceso por construcción, no por código defensivo.</li>
-              <li>Arquitectura por capas con dependencias invertidas y dominio puro, verificado con 269 tests en JVM sin emulador.</li>
-              <li>Una única puerta de calidad (<code>./gradlew qualityCheck</code>) que CI ejecuta sin variantes, así que un verde local y un verde en CI significan lo mismo.</li>
-              <li>Esquema de base de datos versionado en el repositorio: un cambio sin migración rompe la build en vez de un dispositivo.</li>
-              <li>Documentación como entregable: ADD, ocho ADR y especificación del formato de intercambio.</li>
+              <li>Desarrollo de funcionalidades para la web de venta de Cuimo.</li>
+              <li>Evolución del ERP interno de la empresa.</li>
+              <li>Integraciones con servicios externos.</li>
+              <li>Contacto constante con los distintos departamentos para entender las necesidades de negocio y trasladarlas a producto.</li>
             </ul>
-            <div class="stack-tags">
-              <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">Room</span><span class="tag">Hilt</span><span class="tag">Coroutines</span><span class="tag">Gradle</span><span class="tag">GitHub Actions</span><span class="tag">detekt</span><span class="tag">Kover</span>
+            <p class="role-stack label">Node.js, TypeScript, React, MongoDB, AWS, Claude.</p>
+          </li>
+
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Backend Tech Lead</h3>
+              <p class="role-when"><time datetime="2025-12">Dic 2025</time> – <time datetime="2026-06">Jun 2026</time></p>
             </div>
-          </article>
+            <p class="role-at"><img src="images/logos/selectra.jpeg" alt="" class="role-mark" width="36" height="36" loading="lazy">Selectra</p>
+            <ul>
+              <li>Liderazgo técnico del equipo backend y definición de arquitectura.</li>
+              <li>Coordinación con producto, frontend y stakeholders para alinear tecnología y negocio.</li>
+              <li>Gestión de equipo multidisciplinar en remoto.</li>
+              <li>Diseño e implementación de sistemas backend escalables en Python (FastAPI, Django).</li>
+              <li>Mejora de la calidad del código con SonarQube y automatización de despliegues en GCP.</li>
+            </ul>
+            <p class="role-stack label">Python, FastAPI, Django, PostgreSQL, Firestore, Docker, GCP, GitHub Actions, SonarQube.</p>
+          </li>
 
-        </div>
-      </section>
-
-      <section id="skills" class="section reveal">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills-grid">
-
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="32" height="32">
-                <span>Node.js</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="32" height="32">
-                <span>TypeScript</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python" width="32" height="32">
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="FastAPI" width="32" height="32">
-                <span>FastAPI</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/django/django-plain.svg" alt="Django" width="32" height="32" class="icon-dark">
-                <span>Django</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/ruby/ruby-original.svg" alt="Ruby on Rails" width="32" height="32">
-                <span>Ruby on Rails</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java" width="32" height="32">
-                <span>Java</span>
-              </div>
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Ingeniero de Software</h3>
+              <p class="role-when"><time datetime="2024-03">Mar 2024</time> – <time datetime="2025-12">Dic 2025</time></p>
             </div>
+            <p class="role-at"><img src="images/logos/selectra.jpeg" alt="" class="role-mark" width="36" height="36" loading="lazy">Selectra</p>
+            <ul>
+              <li>Desarrollo de la aplicación web principal en el sector energético para España y Portugal, con foco en integraciones y fiabilidad.</li>
+              <li>Desarrollo backend con Ruby on Rails e integración con servicios externos (CRMs, sistemas de calidad).</li>
+              <li>Participación en metodologías Agile y despliegues automatizados en GCP.</li>
+            </ul>
+            <p class="role-stack label">Ruby on Rails, GCP, Git.</p>
+          </li>
+
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Desarrollador I+D</h3>
+              <p class="role-when"><time datetime="2023-09">Sep 2023</time> – <time datetime="2024-02">Feb 2024</time></p>
+            </div>
+            <p class="role-at"><img src="images/logos/alisys.png" alt="" class="role-mark" width="36" height="36" loading="lazy">Alisys</p>
+            <ul>
+              <li>Desarrollo de API OAuth2 dockerizada y proxy de integración con chatbots.</li>
+              <li>Investigación en modelos de lenguaje y despliegues en entornos privados (OKD).</li>
+            </ul>
+            <p class="role-stack label">Python, Docker, OAuth2, OKD.</p>
+          </li>
+
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Desarrollador</h3>
+              <p class="role-when"><time datetime="2022-07">Jul 2022</time> – <time datetime="2023-09">Sep 2023</time></p>
+            </div>
+            <p class="role-at"><img src="images/logos/sabio.jpeg" alt="" class="role-mark" width="36" height="36" loading="lazy">Sabio</p>
+            <ul>
+              <li>Desarrollo de ChatBots y VoiceBots con Microsoft Bot Framework y Dialogflow CX.</li>
+              <li>Integración con APIs backend de clientes y despliegues automatizados.</li>
+            </ul>
+            <p class="role-stack label">Node.js, TypeScript, Dialogflow CX, MongoDB, Docker, Kubernetes, ArgoCD.</p>
+          </li>
+
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Desarrollador de Software Junior</h3>
+              <p class="role-when"><time datetime="2019-05">May 2019</time> – <time datetime="2022-06">Jun 2022</time></p>
+            </div>
+            <p class="role-at"><img src="images/logos/fonetic.jpg" alt="" class="role-mark" width="36" height="36" loading="lazy">Fonetic (Sabio Group)</p>
+            <ul>
+              <li>Desarrollo de VoiceBots en VoiceXML y JavaScript; servicios backend en Java.</li>
+              <li>Participación en proyectos internacionales del sector asegurador y soporte en producción.</li>
+            </ul>
+            <p class="role-stack label">VoiceXML, JavaScript, Java, Node.js, TypeScript, MongoDB, Docker, Kubernetes.</p>
+          </li>
+
+          <li class="role stock">
+            <div class="role-head">
+              <h3>Becario de Desarrollo de Software</h3>
+              <p class="role-when"><time datetime="2018-06">Jun 2018</time> – <time datetime="2018-12">Dic 2018</time></p>
+            </div>
+            <p class="role-at"><img src="images/logos/optiva-media.png" alt="" class="role-mark" width="36" height="36" loading="lazy">Optiva Media</p>
+            <ul>
+              <li>Desarrollo de funcionalidades backend/frontend y pruebas de integración.</li>
+              <li>Colaboración en despliegues y pipelines de integración continua (Jenkins).</li>
+            </ul>
+            <p class="role-stack label">JavaScript, Node.js, AngularJS, MySQL, Jenkins.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--wide">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <ul class="projects">
+
+          <li class="project">
+            <div class="project-body">
+              <h3>Koi</h3>
+              <p class="lead">Aplicación Android para entrenar en casa, totalmente offline: sin backend, sin cuenta y sin red. Sustituye una hoja de cálculo que sabía planificar pero no guiar la sesión.</p>
+              <ul>
+                <li>Temporizador guiado basado en <strong>instantes absolutos</strong> en lugar de un contador: sobrevive a la pantalla apagada, a <em>doze</em> y a la muerte del proceso por construcción, no por código defensivo.</li>
+                <li>Arquitectura por capas con dependencias invertidas y dominio puro, verificado con 269 tests en JVM sin emulador.</li>
+                <li>Una única puerta de calidad (<code>./gradlew qualityCheck</code>) que CI ejecuta sin variantes, así que un verde local y un verde en CI significan lo mismo.</li>
+                <li>Esquema de base de datos versionado en el repositorio: un cambio sin migración rompe la build en vez de un dispositivo.</li>
+                <li>Documentación como entregable: ADD, ocho ADR y especificación del formato de intercambio.</li>
+              </ul>
+              <p class="project-link"><a href="https://github.com/jguijarro11/my-own-koi" target="_blank" rel="noopener">Ver en GitHub</a></p>
+            </div>
+            <div class="specs stock">
+              <table>
+                <caption>Ficha</caption>
+                <tbody>
+                  <tr><th scope="row">Plataforma</th><td>Android, Kotlin, Jetpack Compose, Material 3</td></tr>
+                  <tr><th scope="row">Datos</th><td>Room, esquema versionado en el repositorio</td></tr>
+                  <tr><th scope="row">Inyección</th><td>Hilt, Coroutines</td></tr>
+                  <tr><th scope="row">Pruebas</th><td class="fig">269 en JVM, sin emulador</td></tr>
+                  <tr><th scope="row">Calidad</th><td>Gradle, GitHub Actions, detekt, Kover</td></tr>
+                  <tr><th scope="row">Documentación</th><td class="fig">ADD, 8 ADR, formato de intercambio</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="section section--wide section--last">
+      <div class="container split split--skills">
+        <h2>Habilidades</h2>
+        <dl class="skills">
+          <div>
+            <dt>Backend</dt>
+            <dd>Node.js, TypeScript, Python (FastAPI, Django), Ruby on Rails, Java.</dd>
           </div>
-
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React" width="32" height="32">
-                <span>React</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32">
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML" width="32" height="32">
-                <span>HTML</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS" width="32" height="32">
-                <span>CSS</span>
-              </div>
-            </div>
+          <div>
+            <dt>Frontend</dt>
+            <dd>React, JavaScript, HTML, CSS.</dd>
           </div>
-
-          <div class="skill-category">
-            <h3>Cloud &amp; DevOps</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="32" height="32" class="icon-dark">
-                <span>AWS</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/googlecloud/googlecloud-original.svg" alt="GCP" width="32" height="32">
-                <span>GCP</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="Docker" width="32" height="32">
-                <span>Docker</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="32" height="32">
-                <span>Kubernetes</span>
-              </div>
-            </div>
+          <div>
+            <dt>Cloud &amp; DevOps</dt>
+            <dd>AWS, GCP, Docker, Kubernetes.</dd>
           </div>
-
-          <div class="skill-category">
-            <h3>Bases de datos</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="32" height="32">
-                <span>MongoDB</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="32" height="32">
-                <span>PostgreSQL</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="MySQL" width="32" height="32">
-                <span>MySQL</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/firebase/firebase-plain.svg" alt="Firestore" width="32" height="32">
-                <span>Firestore</span>
-              </div>
-            </div>
+          <div>
+            <dt>Bases de datos</dt>
+            <dd>MongoDB, PostgreSQL, MySQL, Firestore.</dd>
           </div>
-
-          <div class="skill-category">
-            <h3>Herramientas &amp; IA</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude" width="32" height="32">
-                <span>Claude</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="Git" width="32" height="32">
-                <span>Git</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="GitHub Actions" width="32" height="32" class="icon-dark">
-                <span>GitHub Actions</span>
-              </div>
-            </div>
+          <div>
+            <dt>Herramientas &amp; IA</dt>
+            <dd>Claude, Git, GitHub Actions.</dd>
           </div>
-
-          <div class="skill-category">
-            <h3>Idiomas &amp; Certificaciones</h3>
-            <div class="cert-list">
-              <span class="cert-badge">🇪🇸 Español — Nativo</span>
-              <span class="cert-badge">🇬🇧 Inglés — Professional Working</span>
-              <a class="cert-badge cert-link" href="https://openwebinars.net/cert/zMyRD" target="_blank" rel="noopener noreferrer">🐳 Docker DevOps Profesional <svg class="cert-ext" xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg></a>
-              <span class="cert-badge">🐍 Python Avanzado</span>
-              <a class="cert-badge cert-link" href="https://cursos.trainingit.es/mod/customcert/verify_certificate.php?code=z9a7N7usFl" target="_blank" rel="noopener noreferrer">🤖 Programación asistida por IA <svg class="cert-ext" xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg></a>
-            </div>
+          <div>
+            <dt>Idiomas &amp; Certificaciones</dt>
+            <dd>Español — Nativo. Inglés — Professional Working. <a href="https://openwebinars.net/cert/zMyRD" target="_blank" rel="noopener noreferrer">Docker DevOps Profesional</a>. Python Avanzado. <a href="https://cursos.trainingit.es/mod/customcert/verify_certificate.php?code=z9a7N7usFl" target="_blank" rel="noopener noreferrer">Programación asistida por IA</a>.</dd>
           </div>
+        </dl>
+      </div>
+    </section>
 
-        </div>
-      </section>
-
-    </div>
   </main>
 
   <footer id="contact" class="footer">
-    <div class="footer-inner">
-      <p class="footer-name">Jorge Guijarro del Nuevo</p>
-      <p class="footer-role">Desarrollador Full Stack Senior · Madrid, España</p>
-      <div class="footer-links">
-        <a href="mailto:jguijarro11@gmail.com">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
-          jguijarro11@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/jorge-guijarro-del-nuevo" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/jguijarro11" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="tel:+34638907350">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
-          (+34) 638 907 350
-        </a>
-      </div>
-      <p class="footer-copy">© 2026 Jorge Guijarro del Nuevo</p>
+    <div class="container">
+      <p class="footer-mark">Jorge Guijarro del Nuevo</p>
+      <ul class="footer-links">
+        <li><a href="mailto:jguijarro11@gmail.com">jguijarro11@gmail.com</a></li>
+        <li><a href="tel:+34638907350">(+34) 638 907 350</a></li>
+        <li><a href="https://linkedin.com/in/jorge-guijarro-del-nuevo" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/jguijarro11" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="files/Jorge_Guijarro_resume.pdf" download>Descargar CV</a></li>
+      </ul>
+      <p class="footer-note label">© 2026 Jorge Guijarro del Nuevo.</p>
     </div>
   </footer>
 
   <script>
-    // ── Theme toggle ──────────────────────────────────────────
-    const html = document.documentElement;
-    const themeBtn = document.getElementById('themeBtn');
-
-    function getSystemTheme() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    function applyTheme(theme) {
-      const resolved = theme === 'auto' ? getSystemTheme() : theme;
-      html.setAttribute('data-theme', resolved);
-      localStorage.setItem('theme', theme);
-      themeBtn.setAttribute('aria-label',
-        resolved === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    }
-
-    // Init: respect stored preference or system default
-    applyTheme(localStorage.getItem('theme') || 'auto');
-
-    themeBtn.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    });
-
-    // Keep in sync if user changes OS theme and no manual override
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'auto') {
-        applyTheme('auto');
-      }
-    });
-
-    // ── Navbar shadow on scroll ───────────────────────────────
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-
-    // ── Active section in navbar ──────────────────────────────
     const navLinks = [...document.querySelectorAll('.nav-links a')];
     const navSections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
     let lockedId = null;
@@ -534,18 +322,6 @@
     }, { passive: true });
 
     setActive(currentSectionId());
-
-    // ── Reveal animations ─────────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
