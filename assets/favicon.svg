@@ -1,11 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a74c1"/>
-      <stop offset="0.55" stop-color="#0d47a1"/>
-      <stop offset="1" stop-color="#1a237e"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="url(#g)"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="-1" fill="#fff">JG</text>
+  <rect width="64" height="64" rx="14" fill="#ba4a34"/>
+  <path fill="#fdfbf8" d="M27.64 19.79V35.43Q27.64 39.65 25.21 42.18Q22.78 44.72 18.32 44.72Q13.97 44.72 11.56 42.22Q9.14 39.72 9.08 35.71H14.24Q14.35 40.09 18.32 40.09Q22.44 40.09 22.44 35.57V19.79ZM42.6 44.72Q37.23 44.72 33.62 41.11Q30.02 37.51 30.02 31.9Q30.02 26.49 33.54 22.89Q37.06 19.28 42.4 19.28Q46.95 19.28 50.17 21.73Q53.38 24.18 54.6 28.26H48.52Q47.94 26.32 46.29 25.12Q44.64 23.91 42.26 23.91Q39.2 23.91 37.26 26.07Q35.32 28.23 35.32 32.03Q35.32 35.67 37.3 38Q39.27 40.33 42.84 40.33Q45.46 40.33 47.16 38.92Q48.86 37.51 49.4 35.16H42.33V31.05H54.91Q55.15 37.07 51.76 40.89Q48.38 44.72 42.6 44.72Z"/>
 </svg>
